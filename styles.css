@@ -1,0 +1,124 @@
+/* Basic reset and typography styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-cls: #e2e8f0;
+  --sidebar-cls: #4b5563;
+  --text-cls: #fff;
+  --border-cls: #047857;
+  --main-cls: #fff;
+  --hover-cls: #64748b;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-cls);
+  height: 100dvh;
+   font-family: "Montserrat", sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: 40px;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Layout styles completed using grid */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100%;
+  grid-template-areas: 
+        "left-sidebar header"
+        "left-sidebar main"
+        "left-sidebar right-sidebar";
+}
+
+.left-sidebar {
+ background-color: var(--sidebar-cls);
+ grid-area: left-sidebar;
+}
+
+.header {
+  background-color: var(--bg-cls);
+  grid-area: header;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.main {
+  background-color: var(--main-cls);
+  grid-area: main;
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+.right-sidebar {
+  background-color: var(--sidebar-cls);
+  grid-area: right-sidebar;
+  grid-column: 3;
+  grid-row: 1 / 4;
+}
+
+/* Left sidebar design */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  gap: 20px;
+  padding: 30px;
+
+     h1 {
+      font-size: 25px;
+      color: var(--text-cls);
+      font-weight: 100;
+     }
+}
+
+.sidebar__menus i {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.sidebar__menus a {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  text-decoration: none;
+  align-items: center;
+  color: var(--bg-cls);
+  font-size: 18px;
+}
+
+.sidebar__menus a:hover {
+  background-color: var(--hover-cls);
+  color: var(--text-cls);
+  transition: all 0.5s ease;
+  font-size: 22px;
+}
+
