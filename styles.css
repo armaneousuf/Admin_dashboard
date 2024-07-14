@@ -69,11 +69,12 @@ i {
 .grid {
   display: grid;
   grid-template-columns: 1fr 5fr 2fr;
+  grid-template-rows: auto 1fr 1fr;
   height: 100%;
   grid-template-areas:
-    "left-sidebar header"
-    "left-sidebar main"
-    "left-sidebar right-sidebar";
+    "left-sidebar header header"
+    "left-sidebar main right-sidebar"
+    "left-sidebar main right-sidebar";
 }
 
 .left-sidebar {
@@ -84,23 +85,23 @@ i {
 .header {
   background-color: var(--bg-cls);
   grid-area: header;
-  grid-column: 2 / 3 span;
+  /* grid-column: 2 / 3 span; */
   /* grid-row: 1 / 2; */
 }
 
 .main {
   background-color: var(--main-cls);
   grid-area: main;
-  grid-column: 2 / 4;
-  grid-row: 2 / 4;
-  min-height: 450px;
+  /* grid-column: 2 / 4;
+  grid-row: 2 / 4; */
+  /* min-height: 450px; */
 }
 
 .right-sidebar {
   background-color: var(--sidebar-cls);
   grid-area: right-sidebar;
-  grid-column: 2 span / 5;
-  grid-row: 2 / -1;
+  /* grid-column: 2 span / 5;
+  grid-row: 2 / -1; */
 }
 
 /* Left sidebar design */
