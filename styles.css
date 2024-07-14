@@ -1,5 +1,5 @@
 /* Basic reset and typography styles */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --bg-cls: #e2e8f0;
@@ -10,7 +10,9 @@
   --hover-cls: #64748b;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,68 +21,86 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-cls);
   height: 100dvh;
-   font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background-color: #164e63;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: 40px;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
+i {
+  cursor: pointer;
+}
 /* Layout styles completed using grid */
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  height: 100%
+  height: 100%;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 5fr 2fr;
   height: 100%;
-  grid-template-areas: 
-        "left-sidebar header"
-        "left-sidebar main"
-        "left-sidebar right-sidebar";
+  grid-template-areas:
+    "left-sidebar header"
+    "left-sidebar main"
+    "left-sidebar right-sidebar";
 }
 
 .left-sidebar {
- background-color: var(--sidebar-cls);
- grid-area: left-sidebar;
+  background-color: var(--sidebar-cls);
+  grid-area: left-sidebar;
 }
 
 .header {
   background-color: var(--bg-cls);
   grid-area: header;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-column: 2 / 3 span;
+  /* grid-row: 1 / 2; */
 }
 
 .main {
   background-color: var(--main-cls);
   grid-area: main;
-  grid-column: 2 / 3;
+  grid-column: 2 / 4;
   grid-row: 2 / 4;
+  min-height: 450px;
 }
 
 .right-sidebar {
   background-color: var(--sidebar-cls);
   grid-area: right-sidebar;
-  grid-column: 3;
-  grid-row: 1 / 4;
+  grid-column: 2 span / 5;
+  grid-row: 2 / -1;
 }
 
 /* Left sidebar design */
@@ -92,11 +112,11 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 20px;
   padding: 30px;
 
-     h1 {
-      font-size: 25px;
-      color: var(--text-cls);
-      font-weight: 100;
-     }
+  h1 {
+    font-size: 25px;
+    color: var(--text-cls);
+    font-weight: 100;
+  }
 }
 
 .sidebar__menus i {
@@ -122,3 +142,61 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 22px;
 }
 
+.input {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+
+  i {
+    font-size: 18px;
+    color: var(--hover-cls);
+  }
+}
+
+input { 
+  border-radius: 10px;
+  border: none;
+  outline: 1px solid var(--hover-cls);
+}
+
+.profile__ {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.profile {
+  border: 2px solid var(--text-cls);
+  border-radius: 60%;
+  background-color: var(--bg-cls);
+}
+
+.profile__details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px;
+}
+
+.profile__buttons {
+  margin-left: auto;
+
+  button {
+    border: none;
+    background-color: var(--border-cls);
+    color: var(--text-cls);
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 13px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+}
