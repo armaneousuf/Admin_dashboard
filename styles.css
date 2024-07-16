@@ -124,8 +124,8 @@ i {
 }
 
 .sidebar__menus a:hover {
-  background-color: var(--hover-cls);
-  color: var(--text-cls);
+  background-color: #8b8b8b;
+  color: #000;
   transition: all cubic-bezier(0.17, 0.67, 0.83, 0.67) 0.5s;
   font-size: 22px;
 }
@@ -179,14 +179,19 @@ input {
 
 .profile__buttons button {
   border: none;
-  background-color: var(--border-cls);
-  color: var(--text-cls);
-  padding: 6px;
+  background-color: #8b8b8b;
+  color: #000;
+  padding: 5px;
   cursor: pointer;
-  border-radius: 13px;
+  border-radius: 10px;
   margin-left: 20px;
-  font-size: 14px;
-  font-weight: lighter;
+  font-size: 16px;
+  width: 80px;
+}
+
+button:hover {
+  background-color: #F8EDE3;
+  transition: all cubic-bezier(0.17, 0.67, 0.83, 0.67) 0.5s;
 }
 
 .main-container {
@@ -204,6 +209,12 @@ input {
   margin: 10px;
   background-color: var(--bg-cls);
   border-radius: 20px;
+  border-left: 6px solid var(--sidebar-cls);
+}
+
+.card:hover {
+  background-color: #F8EDE3;
+  cursor: pointer;
   border-left: 6px solid var(--sidebar-cls);
 }
 
